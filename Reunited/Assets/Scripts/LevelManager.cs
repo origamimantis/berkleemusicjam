@@ -10,14 +10,13 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    private bool isPlayable;
-    private int currentLevel;
-
+    public int currentLevel;
     public Button[] buttons;
 
     private void Start()
     {
-        currentLevel = 1;
+        //Sets level to current level, or 1 if no levels played.
+        currentLevel = PlayerPrefs.GetInt("Level", 1);
 
         for (int i = 0; i < buttons.Length; i++)
         {
@@ -34,5 +33,8 @@ public class LevelManager : MonoBehaviour
     {
         if (currentLevel == level)
             currentLevel++;
+
+        //Stores the level that the player gets to.
+        PlayerPrefs.SetInt("Level", currentLevel);
     }
 }

@@ -43,5 +43,11 @@ public class PlayerMovement : MonoBehaviour
     {
         inputVelocity.y = (Input.GetKey(KeyCode.W) ? 1 : 0) - (Input.GetKey(KeyCode.S) ? 1 : 0);
         inputVelocity.x = (Input.GetKey(KeyCode.D) ? 1 : 0) - (Input.GetKey(KeyCode.A) ? 1 : 0);
+
+        if(tag.Equals("Finish"))
+        {
+            Shader.SetGlobalVector("_futureLocation", 
+                new Vector4(transform.position.x, transform.position.y, transform.position.z, 0));
+        }
     }
 }

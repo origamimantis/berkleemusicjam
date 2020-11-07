@@ -14,14 +14,14 @@ public class Lever : Usable
     public Sprite off;
     public Sprite on;
 
-    public new Light light;
+    public GameObject go;
 
     public void Start()
     {
         renderer = GetComponent<Renderer>();
         renderer.material.SetTexture("_SecondaryTex", state ? on.texture : off.texture);
 
-        light.enabled = state;
+        go.SetActive(!state);
     }
 
     public override void onUse()
@@ -31,7 +31,7 @@ public class Lever : Usable
             state = !state;
             renderer.material.SetTexture("_SecondaryTex", state ? on.texture : off.texture);
 
-            light.enabled = state;
+            go.SetActive(!state);
         }
     }
 

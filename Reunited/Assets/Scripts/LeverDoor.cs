@@ -30,8 +30,8 @@ public class LeverDoor : Usable
             renderer.material.SetTexture("_SecondaryTex", state ? on.texture : off.texture);
 	    foreach (GameObject Door in Doors)
 	    {
-		    Door.GetComponent<BoxCollider2D>().isTrigger = true;
-		    Door.GetComponent<Renderer>().enabled = false;
+		    Door.GetComponent<BoxCollider2D>().isTrigger = state;
+		    Door.GetComponent<Renderer>().enabled = !state;
 	    }
 
         }

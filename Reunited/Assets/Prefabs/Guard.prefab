@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moving: 1
+  PathObject: {fileID: 0}
   accelSpeed: 1
   maxSpeed: 1
   PauseDuration: 2
-  Path: []
 --- !u!1 &1720649160854406538
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,9 +278,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.29895315, y: -0.6982693}
+    - - {x: 0.01169336, y: -0.92605287}
+      - {x: 0.3745722, y: -0.8687232}
       - {x: -0.004776123, y: -0.13772082}
-      - {x: -0.26556027, y: -0.6971349}
+      - {x: -0.393167, y: -0.8709979}
 --- !u!114 &8434395934759759960
 MonoBehaviour:
   m_ObjectHideFlags: 0

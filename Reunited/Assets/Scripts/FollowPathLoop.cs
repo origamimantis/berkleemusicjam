@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPath : FollowBase
+public class FollowPathLoop : FollowBase
 {
     private float speed = 0;
     private Vector2 inputVelocity;
@@ -11,15 +11,14 @@ public class FollowPath : FollowBase
     public float maxSpeed = 1;
     // will pause at end of path for at least PauseDuration
     public float PauseDuration = 2;
+    // At end of path, head back the other way.
+    // if false, will loop back to the beginning.
 
     public Transform[] Path;
 
-    int direction = -1;
+    int direction = 1;
     
-    float pause = 0;
-
     int pathIdx = 0;
-    private Vector2 lastPoint;
     private Vector2 facing;
 
     // Start is called before the first frame update
@@ -36,19 +35,10 @@ public class FollowPath : FollowBase
 
     void FixedUpdate()
     {
-	if (moving == false)
-		return;
-	if (pause > 0)
-	{
-		pause -= Time.deltaTime;
-		if (pause <= 0)
-		    ApplyRotate();
-	}
-	else
-	{
-	    pause = 0;
+	    if (moving == false)
+		    return;
 	    speed = Mathf.Min(maxSpeed, speed + Time.deltaTime * accelSpeed);
-	    lastPoint = Path[pathIdx].transform.position;
+	    Vector2 lastPoint = Path[pathIdx].transform.position;
 
 	    transform.position = Vector2.MoveTowards(transform.position,
 		    lastPoint, speed * Time.deltaTime);
@@ -59,27 +49,16 @@ public class FollowPath : FollowBase
 	    }
 	    else if (delta.magnitude == 0)
 	    {
-    	        if (pathIdx == Path.Length - 1 || pathIdx == 0)
+	        if (pathIdx == Path.Length - 1)
 	        {
-		    direction *= -1;
-		    pause = PauseDuration;
-		    speed = 0;
-		}
-
+		    pathIdx = -1;
+	        }
 	        pathIdx += direction;
-
-		if (pause == 0)
-		    ApplyRotate();
 		
+		Vector2 curDirection = Path[pathIdx].transform.position;
+		Vector2 rotate = facing - (curDirection - lastPoint);
+		transform.right = rotate;
+		transform.up = rotate;
 	    }
-	}
-    
-    }
-    void ApplyRotate()
-    {
-	Vector2 curDirection = Path[pathIdx].transform.position;
-	Vector2 rotate = facing - (curDirection - lastPoint);
-	transform.right = rotate;
-	transform.up = rotate;
     }
 }

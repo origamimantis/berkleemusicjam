@@ -21,6 +21,7 @@ public class FollowPath : FollowBase
     int pathIdx = 0;
     private Vector2 lastPoint;
     private Vector2 facing;
+    private bool moving = true;
 
     // Start is called before the first frame update
     void Start()

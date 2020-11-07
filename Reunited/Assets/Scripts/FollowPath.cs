@@ -17,6 +17,7 @@ public class FollowPath : FollowBase
     int direction = -1;
     
     float pause = 0;
+    bool initial = true;
 
     int pathIdx = 0;
     private Vector2 lastPoint;
@@ -62,7 +63,10 @@ public class FollowPath : FollowBase
     	        if (pathIdx == Path.Length - 1 || pathIdx == 0)
 	        {
 		    direction *= -1;
-		    pause = PauseDuration;
+		    if (initial == false)
+			    pause = PauseDuration;
+		    else
+			    initial = false;
 		    speed = 0;
 		}
 

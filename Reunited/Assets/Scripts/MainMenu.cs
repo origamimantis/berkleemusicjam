@@ -9,11 +9,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame()
+    /// <summary>
+    /// Takes in a level and loads in by buildIndex, current + the level.
+    /// </summary>
+    /// <param name="level">The desired level to play</param>
+    public void PlayGame(int level)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + level);
     }
 
+    /// <summary>
+    /// Quits the game.
+    /// </summary>
     public void QuitGame()
     {
         Application.Quit();

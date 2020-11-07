@@ -27,7 +27,7 @@ public class GameCoordinator : MonoBehaviour
 
         lineRenderer.SetPositions(linePositions);
 
-        lineRenderer.startWidth = .5f;
-        lineRenderer.endWidth = 1f;
+        lineRenderer.startWidth = 0;// .5f;
+        lineRenderer.endWidth = 0;// 1f;
     }
 }

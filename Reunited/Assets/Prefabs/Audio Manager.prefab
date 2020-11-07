@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Button Hover
+  - name: Hover
     clip: {fileID: 8300000, guid: e4cfe16ce3d61ed43a2e6db74c721034, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -56,13 +56,13 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: Button Select
+  - name: Click
     clip: {fileID: 8300000, guid: e478e305d506ef74882dd5545ff0b899, type: 3}
-    volume: 1
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: Take Damage
+  - name: Die
     clip: {fileID: 8300000, guid: 6fb6beea76aeaf543b0cfed140e26067, type: 3}
     volume: 1
     pitch: 1
@@ -76,6 +76,12 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Victory
     clip: {fileID: 8300000, guid: 175a5adf7d3e0ce4993699b1b9ca22a3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Arrow
+    clip: {fileID: 8300000, guid: 95e25ede3eca14c4dabca36c41d7447c, type: 3}
     volume: 1
     pitch: 1
     loop: 0

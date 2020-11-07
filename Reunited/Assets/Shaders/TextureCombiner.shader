@@ -8,12 +8,12 @@
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "Queue" = "Transparent" "RenderType" = "Transparent" }
         LOD 200
 
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
-        #pragma surface surf Standard fullforwardshadows
+        #pragma surface surf Standard fullforwardshadows alpha:fade
 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
@@ -68,11 +68,13 @@
 			dy = _futureLocation.y - IN.worldPos.y;
 			dy *= dy;
 			
-			float factor = 1.0f / ((dx + dy));
+			float factor = 3.0f / ((dx + dy));
+
+			factor *= factor;
 
 			fixed4 c = (min(1, 1/factor) * tex2D(_MainTex, IN.uv_MainTex) + min(1, factor) * tex2D(_SecondaryTex, IN.uv_SecondaryTex));
             o.Albedo = c.rgb;
-            o.Alpha = 1;
+            o.Alpha = c.a;
         }
         ENDCG
     }

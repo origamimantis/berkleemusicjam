@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -21,7 +22,9 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < buttons.Length; i++)
         {
             if (i + 1 > currentLevel)
+            {
                 buttons[i].interactable = false;
+            }
         }
     }
 

@@ -12,8 +12,6 @@ public class FollowPath : FollowBase
     // will pause at end of path for at least PauseDuration
     public float PauseDuration = 2;
 
-    public Transform[] Path;
-
     int direction = -1;
     
     float pause = 0;
@@ -26,13 +24,7 @@ public class FollowPath : FollowBase
     // Start is called before the first frame update
     void Start()
     {
-	transform.position = Path[0].transform.position;
-
-        Transform body = transform.GetChild(1);
-	body.position = Path[0].transform.position;
-
-        Transform child = transform.GetChild(0);
-	child.position = transform.position;
+	    base.Start();
     }
 
     void FixedUpdate()

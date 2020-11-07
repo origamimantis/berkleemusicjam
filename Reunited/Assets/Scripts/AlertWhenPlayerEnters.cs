@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class AlertWhenPlayerEnters : MonoBehaviour
 {
+	public GameObject player;
+	public GameObject future;
+
 	private FollowBase movescript;
+	private float timeSeen = 0;
+	private bool seen = false;
+	private bool lose = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,22 +21,37 @@ public class AlertWhenPlayerEnters : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+	    if (seen)
+	    {
+		    timeSeen += Time.deltaTime;
+	    }
+	    if (timeSeen > 0.2f && lose == false)
+	    {
+		    lose = true;
+		    Invoke("OnLose", 0f);
+	    }
+    }
+    void OnLose()
+    {
+	UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Menu");
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
-	if (collider.tag == "Player")
+	if (collider.gameObject == player || collider.gameObject == future)
 	{
 	    gameObject.GetComponent<SpriteRenderer>().color = new Color (1, 0, 0, .35f); 
 	    movescript.moving = false;
+	    seen = true;
+	    timeSeen = 0;
 	}
     }
     void OnTriggerExit2D(Collider2D collider)
     {
-	if (collider.tag == "Player")
+	if (collider.gameObject == player || collider.gameObject == future)
 	{
 	    gameObject.GetComponent<SpriteRenderer>().color = new Color (1, 1, 1, .25f); 
 	    movescript.moving = true;
+	    seen = false;
 	}
     }
 }

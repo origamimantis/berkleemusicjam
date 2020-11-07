@@ -8,9 +8,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class toggledepot : MonoBehaviour
+public class ToggleDoor : MonoBehaviour
 {
-    // object to disble collisions for (a wall)
+    // objects to disble collisions for (doors)
     public GameObject[] targets;
     // Start is called before the first frame update
     void Start()

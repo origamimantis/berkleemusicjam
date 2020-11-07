@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//Reese Lodwick
+//11/6/2020
+//Level editor that'll take images and determined by
+//color and position of the pixel will place it in the unity project
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,8 +19,8 @@ public class LevelEditor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
+    //Goes through each pixel passed through colormapping
     void GenerateLevel()
     {
         for(int x = 0; x < level.width; x++)
@@ -39,6 +43,7 @@ public class LevelEditor : MonoBehaviour
             return;
         }
 
+        //Sets the position to the position of the object in unity
         foreach(ColorToPrefab colorMapping in colorMappings)
         {
             if(colorMapping.color.Equals(color))

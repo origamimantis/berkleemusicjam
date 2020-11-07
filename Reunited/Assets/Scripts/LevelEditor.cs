@@ -34,23 +34,28 @@ public class LevelEditor : MonoBehaviour
 
     void GenerateTile(int x, int y)
     {
+        Color levelColor;   
+        GameObject line;
         //Get the color of the pixel
-        Color color = level.GetPixel(x, y);
-
-        //Check if the pixel isn't colored and if not stop the method
-        if(color.a == 0)
+        levelColor = level.GetPixel(x, y);            
+        if (levelColor.a == 0)
         {
             return;
         }
-
-        //Sets the position to the position of the object in unity
-        foreach(ColorToPrefab colorMapping in colorMappings)
+        for (int z = 0; z < colorMappings.Length; z++)
         {
-            if(colorMapping.color.Equals(color))
-            {
-                Vector2 position = new Vector2(x, y);
-                Instantiate(colorMapping.prefab, position, Quaternion.identity, transform);
+            if (colorMappings[z].color.r == levelColor.r && colorMappings[z].color.b == levelColor.b && colorMappings[z].color.g == levelColor.g)
+            { 
+                    Vector2 position = new Vector2(x, y);
+                    Instantiate(colorMappings[z].prefab, position, Quaternion.identity, transform);
             }
         }
+
     }
+        //Check if the pixel isn't colored and if not stop the method
+        
+
+        //Sets the position to the position of the object in unity
+        
 }
+

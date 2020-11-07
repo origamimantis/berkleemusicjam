@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class Lever : Usable
 {
-    bool state;
+    public bool state = false;
     bool visible = false;
 
     private new Renderer renderer;
 
     public GameObject future;
 
+    public Sprite off;
+    public Sprite on;
+
+    public new Light light;
+
     public void Start()
     {
         renderer = GetComponent<Renderer>();
+        renderer.material.SetTexture("_SecondaryTex", state ? on.texture : off.texture);
     }
 
     public override void onUse()
@@ -21,7 +27,9 @@ public class Lever : Usable
         if (visible)
         {
             state = !state;
-            print("[Lever] " + state);
+            renderer.material.SetTexture("_SecondaryTex", state ? on.texture : off.texture);
+
+            light.enabled = state;
         }
     }
 

@@ -14,13 +14,10 @@ public class FollowPathLoop : FollowBase
     // At end of path, head back the other way.
     // if false, will loop back to the beginning.
 
-    public Transform[] Path;
-
     int direction = 1;
     
     int pathIdx = 0;
     private Vector2 facing;
-    private bool moving = true;
 
     // Start is called before the first frame update
     void Start()

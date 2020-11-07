@@ -14,8 +14,6 @@ public class FollowPathLoop : FollowBase
     // At end of path, head back the other way.
     // if false, will loop back to the beginning.
 
-    public Transform[] Path;
-
     int direction = 1;
     
     int pathIdx = 0;
@@ -24,13 +22,7 @@ public class FollowPathLoop : FollowBase
     // Start is called before the first frame update
     void Start()
     {
-	transform.position = Path[0].transform.position;
-
-        Transform body = transform.GetChild(1);
-	body.position = Path[0].transform.position;
-
-        Transform child = transform.GetChild(0);
-	child.position = transform.position;
+	    base.Start();
     }
 
     void FixedUpdate()

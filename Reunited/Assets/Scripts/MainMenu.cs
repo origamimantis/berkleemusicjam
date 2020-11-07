@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 //Brian Kiss
 //11/6/2020
-//Game menu. Navigates to quit, play, and help.
+//Game menu. Navigates to quit, level select, and help.
 
 public class MainMenu : MonoBehaviour
 {

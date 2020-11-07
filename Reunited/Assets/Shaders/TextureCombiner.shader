@@ -69,8 +69,13 @@
 			dy *= dy;
 			
 			float factor = 3.0f / ((dx + dy));
-
 			factor *= factor;
+
+			IN.uv_MainTex.y = 1 - IN.uv_MainTex.y;
+			IN.uv_SecondaryTex.y = 1 - IN.uv_SecondaryTex.y;
+
+			IN.uv_MainTex.x = 1 - IN.uv_MainTex.x;
+			IN.uv_SecondaryTex.x = 1 - IN.uv_SecondaryTex.x;
 
 			fixed4 c = (min(1, 1/factor) * tex2D(_MainTex, IN.uv_MainTex) + min(1, factor) * tex2D(_SecondaryTex, IN.uv_SecondaryTex));
             o.Albedo = c.rgb;

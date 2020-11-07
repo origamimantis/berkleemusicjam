@@ -20,6 +20,8 @@ public class Lever : Usable
     {
         renderer = GetComponent<Renderer>();
         renderer.material.SetTexture("_SecondaryTex", state ? on.texture : off.texture);
+
+        light.enabled = state;
     }
 
     public override void onUse()

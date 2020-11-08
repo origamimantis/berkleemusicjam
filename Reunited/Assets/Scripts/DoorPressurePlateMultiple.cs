@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorPressurePlate : PressurePlate
+public class DoorPressurePlateMultiple: PressurePlate
 {
+    public GameObject[] others;
     public GameObject[] openDoors;
     public GameObject[] closeDoors;
+
+    private DoorPressurePlateMultiple[] plateScripts;
 
     protected int currentlyOn = 0;
 
@@ -13,10 +16,21 @@ public class DoorPressurePlate : PressurePlate
     {
         return currentlyOn > 0;
     }
-    
+
+    public void Start()
+    {
+        plateScripts = new DoorPressurePlateMultiple[others.Length];
+        for (int i = 0; i < others.Length; i++)
+            plateScripts[i] = others[i].GetComponent<DoorPressurePlateMultiple>();
+    }
+
     public override void onStep()
     {
         currentlyOn++;
+
+        foreach (DoorPressurePlateMultiple plate in plateScripts)
+            if (!plate.Active())
+                return;
 
         foreach (var item in openDoors)
         {

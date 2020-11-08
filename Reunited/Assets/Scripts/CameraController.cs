@@ -25,7 +25,7 @@ public class CameraController : MonoBehaviour
         float dx = future.transform.position.x - player.transform.position.x;
         float dy = future.transform.position.y - player.transform.position.y;
 
-        cam.orthographicSize += lerp * (Mathf.Max(5, 5 / 10.0f * Mathf.Sqrt(dx * dx + dy * dy)) - cam.orthographicSize);
+        cam.orthographicSize += lerp * (Mathf.Max(5, 5 / 6.0f * Mathf.Sqrt(dx * dx + dy * dy)) - cam.orthographicSize);
 
         Vector2 delta = intermediate - new Vector2(transform.position.x, transform.position.y);
 

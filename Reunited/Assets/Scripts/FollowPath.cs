@@ -12,7 +12,7 @@ public class FollowPath : FollowBase
     // will pause at end of path for at least PauseDuration
     public float PauseDuration = 2;
 
-    int direction = -1;
+    int direction = 1;
     
     float pause = 0;
     bool initial = true;
@@ -24,6 +24,7 @@ public class FollowPath : FollowBase
     void Start()
     {
 	    base.Start();
+	    direction *=-1;
     }
 
     void FixedUpdate()
@@ -54,10 +55,10 @@ public class FollowPath : FollowBase
     	        if (pathIdx == Path.Length - 1 || pathIdx == 0)
 	        {
 		    direction *= -1;
-		    if (initial == false)
-			    pause = PauseDuration;
-		    else
+		    if (pathIdx == initialNode && initial == true)
 			    initial = false;
+		    else
+			    pause = PauseDuration;
 		    speed = 0;
 		}
 

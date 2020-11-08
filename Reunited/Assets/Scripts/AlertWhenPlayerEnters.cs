@@ -29,10 +29,14 @@ public class AlertWhenPlayerEnters : MonoBehaviour
 	    {
 		    timeSeen += Time.deltaTime;
 	    }
-	    if (timeSeen > 0.2f && lose == false)
+	    if (timeSeen > 0) //.125f)
 	    {
+	        gameObject.GetComponent<SpriteRenderer>().color = new Color (.8f, 0, 0, .35f); 
+		if (lose == false)
+	        {
 		    lose = true;
 		    Invoke("OnLose", 0f);
+	        }
 	    }
     }
     void OnLose()
@@ -57,7 +61,7 @@ public class AlertWhenPlayerEnters : MonoBehaviour
 	    
 	    if (hit.collider.gameObject == player || hit.collider.gameObject == future)
 	    {
-	        gameObject.GetComponent<SpriteRenderer>().color = new Color (1, 0, 0, .35f); 
+	        gameObject.GetComponent<SpriteRenderer>().color = new Color (1, 0.2f, 0, .35f); 
 	        movescript.moving = false;
 	        seen = true;
 	        timeSeen = 0;

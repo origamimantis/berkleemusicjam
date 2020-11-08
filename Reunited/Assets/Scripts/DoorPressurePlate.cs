@@ -27,6 +27,10 @@ public class DoorPressurePlate : PressurePlate
         {
             item.SetActive(true);
         }
+
+        //Finds lever sound effect from audio sources and plays once.
+        AudioSource pressurePlate = GameObject.FindGameObjectWithTag("PressurePlate").GetComponent(typeof(AudioSource)) as AudioSource;
+        pressurePlate.Play();
     }
 
     public override void onLeave()

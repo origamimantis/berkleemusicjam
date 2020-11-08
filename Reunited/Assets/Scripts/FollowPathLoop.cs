@@ -16,7 +16,6 @@ public class FollowPathLoop : FollowBase
 
     int direction = 1;
     
-    int pathIdx = 0;
     private Vector2 facing;
 
     // Start is called before the first frame update

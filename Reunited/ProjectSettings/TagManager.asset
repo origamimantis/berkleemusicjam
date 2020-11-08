@@ -6,6 +6,14 @@ TagManager:
   tags:
   - Future
   - Block
+  - Door
+  - PressurePlate
+  - Lever
+  - Win
+  - Walk1
+  - Walk2
+  - Walk3
+  - Walk4
   layers:
   - Default
   - TransparentFX

@@ -37,12 +37,23 @@ public class AlertWhenPlayerEnters : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
+	// raycast to avoid sight through walls
+	//
+	
 	if (collider.gameObject == player || collider.gameObject == future)
 	{
-	    gameObject.GetComponent<SpriteRenderer>().color = new Color (1, 0, 0, .35f); 
-	    movescript.moving = false;
-	    seen = true;
-	    timeSeen = 0;
+	    Vector2 eyePos = transform.position - transform.up.normalized*0.5f;
+	    Vector2 delta = (Vector2)collider.transform.position - eyePos; 
+	    RaycastHit2D hit = Physics2D.Raycast(eyePos, delta, delta.magnitude);
+	    
+	    
+	    if (hit.collider.gameObject == player || hit.collider.gameObject == future)
+	    {
+	        gameObject.GetComponent<SpriteRenderer>().color = new Color (1, 0, 0, .35f); 
+	        movescript.moving = false;
+	        seen = true;
+	        timeSeen = 0;
+	    }
 	}
     }
     void OnTriggerExit2D(Collider2D collider)

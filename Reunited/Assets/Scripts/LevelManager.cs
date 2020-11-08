@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    public int currentLevel;
+    private int currentLevel;
     public Button[] buttons;
 
     private void Start()
@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour
         //Sets level to current level, or 1 if no levels played.
         currentLevel = PlayerPrefs.GetInt("Level", 1);
 
+        //Used to lock all levels except the first
         for (int i = 0; i < buttons.Length; i++)
         {
             if (i + 1 > currentLevel)
@@ -39,5 +40,14 @@ public class LevelManager : MonoBehaviour
 
         //Stores the level that the player gets to.
         PlayerPrefs.SetInt("Level", currentLevel);
+
+        //Used to unlock levels as the player progresses.
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            if (i + 1 <= currentLevel)
+            {
+                buttons[i].interactable = true;
+            }
+        }
     }
 }

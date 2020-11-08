@@ -11,11 +11,13 @@ public class AlertWhenPlayerEnters : MonoBehaviour
 	private float timeSeen = 0;
 	private bool seen = false;
 	private bool lose = false;
+
+	public LossMenu loss;
+
     // Start is called before the first frame update
     void Start()
     {
-	movescript = gameObject.GetComponentInParent<FollowBase>(); 
-        
+		movescript = gameObject.GetComponentInParent<FollowBase>();
     }
 
     // Update is called once per frame
@@ -33,7 +35,8 @@ public class AlertWhenPlayerEnters : MonoBehaviour
     }
     void OnLose()
     {
-	UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Menu");
+		//UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Menu");
+		loss.LossScreen();
     }
     void OnTriggerEnter2D(Collider2D collider)
     {

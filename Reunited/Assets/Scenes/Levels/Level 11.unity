@@ -6172,8 +6172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90015c8b65d154b83b564a6f358545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelSpeed: 3
-  maxSpeed: 0.2
 --- !u!23 &733084670
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11083,8 +11081,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90015c8b65d154b83b564a6f358545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelSpeed: 3
-  maxSpeed: 0.2
 --- !u!23 &1221791480
 MeshRenderer:
   m_ObjectHideFlags: 0

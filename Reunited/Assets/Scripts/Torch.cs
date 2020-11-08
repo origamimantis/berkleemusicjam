@@ -19,6 +19,6 @@ public class Torch : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        light.intensity = 1.5f + 0.5f * Mathf.Sin((offset + Time.fixedTime));
+        light.intensity = 1.5f + 0.75f * Mathf.Sin((offset + Time.fixedTime));
     }
 }

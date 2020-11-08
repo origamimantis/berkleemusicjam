@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3977641951617166944}
   - component: {fileID: 3977641951617166947}
   - component: {fileID: 3977641952131443735}
-  - component: {fileID: 3789630638231383377}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -108,17 +107,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   future: {fileID: 0}
---- !u!114 &3789630638231383377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3977641951617166946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b550bfe38bdcb6c4ca1abfbe122a2beb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: {fileID: 0}
-  colorMappings: []

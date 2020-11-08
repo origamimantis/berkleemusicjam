@@ -15,6 +15,9 @@ TagManager:
   - Walk3
   - Walk4
   - Loss
+  - Walk5
+  - Walk6
+  - Walk7
   layers:
   - Default
   - TransparentFX

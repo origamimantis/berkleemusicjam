@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AlertWhenPlayerEnters : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class AlertWhenPlayerEnters : MonoBehaviour
     void Start()
     {
 		movescript = gameObject.GetComponentInParent<FollowBase>();
+		loss = FindObjectOfType<LossMenu>();
     }
 
     // Update is called once per frame
@@ -27,17 +29,24 @@ public class AlertWhenPlayerEnters : MonoBehaviour
 	    {
 		    timeSeen += Time.deltaTime;
 	    }
-	    if (timeSeen > 0.2f && lose == false)
+	    if (timeSeen > 0) //.125f)
 	    {
+	        gameObject.GetComponent<SpriteRenderer>().color = new Color (.8f, 0, 0, .35f); 
+		if (lose == false)
+	        {
 		    lose = true;
 		    Invoke("OnLose", 0f);
+	        }
 	    }
     }
     void OnLose()
     {
-		//UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Menu");
 		loss.LossScreen();
-    }
+
+		//Finds die sound effect from audio sources and plays once.
+		AudioSource die = GameObject.FindGameObjectWithTag("Loss").GetComponent(typeof(AudioSource)) as AudioSource;
+		die.Play();
+	}
     void OnTriggerEnter2D(Collider2D collider)
     {
 	// raycast to avoid sight through walls
@@ -52,7 +61,7 @@ public class AlertWhenPlayerEnters : MonoBehaviour
 	    
 	    if (hit.collider.gameObject == player || hit.collider.gameObject == future)
 	    {
-	        gameObject.GetComponent<SpriteRenderer>().color = new Color (1, 0, 0, .35f); 
+	        gameObject.GetComponent<SpriteRenderer>().color = new Color (1, 0.2f, 0, .35f); 
 	        movescript.moving = false;
 	        seen = true;
 	        timeSeen = 0;

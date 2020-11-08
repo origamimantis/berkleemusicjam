@@ -68,7 +68,7 @@
 			dy = _futureLocation.y - IN.worldPos.y;
 			dy *= dy;
 			
-			float factor = 3.0f / ((dx + dy));
+			float factor = 8.0f / ((dx + dy));
 			factor *= factor;
 
 			IN.uv_MainTex.y = 1 - IN.uv_MainTex.y;

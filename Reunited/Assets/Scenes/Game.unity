@@ -919,10 +919,11 @@ MonoBehaviour:
   player: {fileID: 0}
   interactionDistance: 1
   state: 0
+  visible: 0
   future: {fileID: 386284427}
   off: {fileID: 21300000, guid: 6a6611f1e5280334e88516f25d814aaa, type: 3}
   on: {fileID: 21300000, guid: 2ce814c091dfa1344b4346559db87fde, type: 3}
-  go: {fileID: 1182343216}
+  changeState: {fileID: 0}
 --- !u!65 &314668097
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,12 +11,35 @@ public class PlayerMovement : MonoBehaviour
     public float accelSpeed = 6;
     public float maxSpeed = 10;
 
+    private AudioSource walk1;
+    private AudioSource walk2;
+    private AudioSource walk3;
+    private AudioSource walk4;
+    private AudioSource walk5;
+    private AudioSource walk6;
+    private AudioSource walk7;
+    private int walkDelay = 0;
+    private const int SOUND_DELAY = 20;
+
+    private System.Random rand;
+
     Rigidbody2D body;
 
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+
+        //Finds footsteps
+        walk1 = GameObject.FindGameObjectWithTag("Walk1").GetComponent(typeof(AudioSource)) as AudioSource;
+        walk2 = GameObject.FindGameObjectWithTag("Walk2").GetComponent(typeof(AudioSource)) as AudioSource;
+        walk3 = GameObject.FindGameObjectWithTag("Walk3").GetComponent(typeof(AudioSource)) as AudioSource;
+        walk4 = GameObject.FindGameObjectWithTag("Walk4").GetComponent(typeof(AudioSource)) as AudioSource;
+        walk5 = GameObject.FindGameObjectWithTag("Walk5").GetComponent(typeof(AudioSource)) as AudioSource;
+        walk6 = GameObject.FindGameObjectWithTag("Walk6").GetComponent(typeof(AudioSource)) as AudioSource;
+        walk7 = GameObject.FindGameObjectWithTag("Walk7").GetComponent(typeof(AudioSource)) as AudioSource;
+
+        rand = new System.Random();
     }
 
     void FixedUpdate()
@@ -36,6 +60,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
         body.MovePosition(new Vector2(transform.position.x + velocity.x, transform.position.y + velocity.y));
+
+        //Checks if player is moving, if so, plays sound, else sets it so that the next sound is instant.
+        if (Math.Abs(velocity.x) > .1f || Math.Abs(velocity.y) > .1f)
+            GenerateFootsteps();
+        else
+            walkDelay = 100;
     }
 
     // Update is called once per frame
@@ -49,5 +79,44 @@ public class PlayerMovement : MonoBehaviour
             Shader.SetGlobalVector("_futureLocation", 
                 new Vector4(transform.position.x, transform.position.y, transform.position.z, 0));
         }
+    }
+
+    /// <summary>
+    /// Generates sounds for walking, only occurs when player is moving. Loops through different walk sounds.
+    /// Uses Random() to choose walk sound. Uses a const SOUND_DELAY updated in the FixedUpdate to make consistent.
+    /// </summary>
+    private void GenerateFootsteps()
+    {
+        if (walkDelay > SOUND_DELAY)
+        {
+            int randomNum = rand.Next(1, 8);
+
+            switch (randomNum)
+            {
+                case 1:
+                    walk1.Play();
+                    break;
+                case 2:
+                    walk2.Play();
+                    break;
+                case 3:
+                    walk3.Play();
+                    break;
+                case 4:
+                    walk4.Play();
+                    break;
+                case 5:
+                    walk5.Play();
+                    break;
+                case 6:
+                    walk6.Play();
+                    break;
+                case 7:
+                    walk7.Play();
+                    break;
+            }
+            walkDelay = 0;
+        }
+        walkDelay++;
     }
 }

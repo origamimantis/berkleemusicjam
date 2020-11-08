@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AlertWhenPlayerEnters : MonoBehaviour
 {
@@ -11,11 +12,14 @@ public class AlertWhenPlayerEnters : MonoBehaviour
 	private float timeSeen = 0;
 	private bool seen = false;
 	private bool lose = false;
+
+	public LossMenu loss;
+
     // Start is called before the first frame update
     void Start()
     {
-	movescript = gameObject.GetComponentInParent<FollowBase>(); 
-        
+		movescript = gameObject.GetComponentInParent<FollowBase>();
+		loss = FindObjectOfType<LossMenu>();
     }
 
     // Update is called once per frame
@@ -33,8 +37,12 @@ public class AlertWhenPlayerEnters : MonoBehaviour
     }
     void OnLose()
     {
-	UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Menu");
-    }
+		loss.LossScreen();
+
+		//Finds die sound effect from audio sources and plays once.
+		AudioSource die = GameObject.FindGameObjectWithTag("Loss").GetComponent(typeof(AudioSource)) as AudioSource;
+		die.Play();
+	}
     void OnTriggerEnter2D(Collider2D collider)
     {
 	// raycast to avoid sight through walls

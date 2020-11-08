@@ -9,12 +9,12 @@ using UnityEngine.SceneManagement;
 
 public class CollidingWithFuture : MonoBehaviour
 {
-    private LevelManager levelManager;
+    public LevelManager levelManager;
     public int amtOfLevels;
 
     private void Start()
     {
-        levelManager = GetComponent<LevelManager>();
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -25,7 +25,7 @@ public class CollidingWithFuture : MonoBehaviour
             //Loads the next scene if there is one.
             if (SceneManager.GetActiveScene().buildIndex + 1 <= amtOfLevels)
             {
-                levelManager.HasBeatenLevel(SceneManager.GetActiveScene().buildIndex);
+                //levelManager.HasBeatenLevel(SceneManager.GetActiveScene().buildIndex);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             else

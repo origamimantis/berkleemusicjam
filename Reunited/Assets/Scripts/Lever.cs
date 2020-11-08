@@ -32,6 +32,10 @@ public class Lever : Usable
             renderer.material.SetTexture("_SecondaryTex", state ? on.texture : off.texture);
 
             changeState.SetActive(!state);
+
+            //Finds lever sound effect from audio sources and plays once.
+            AudioSource lever = GameObject.FindGameObjectWithTag("Lever").GetComponent(typeof(AudioSource)) as AudioSource;
+            lever.Play();
         }
     }
 

@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     private AudioSource walk2;
     private AudioSource walk3;
     private AudioSource walk4;
+    private AudioSource walk5;
+    private AudioSource walk6;
+    private AudioSource walk7;
     private int walkDelay = 0;
     private const int SOUND_DELAY = 20;
 
@@ -32,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
         walk2 = GameObject.FindGameObjectWithTag("Walk2").GetComponent(typeof(AudioSource)) as AudioSource;
         walk3 = GameObject.FindGameObjectWithTag("Walk3").GetComponent(typeof(AudioSource)) as AudioSource;
         walk4 = GameObject.FindGameObjectWithTag("Walk4").GetComponent(typeof(AudioSource)) as AudioSource;
+        walk5 = GameObject.FindGameObjectWithTag("Walk5").GetComponent(typeof(AudioSource)) as AudioSource;
+        walk6 = GameObject.FindGameObjectWithTag("Walk6").GetComponent(typeof(AudioSource)) as AudioSource;
+        walk7 = GameObject.FindGameObjectWithTag("Walk7").GetComponent(typeof(AudioSource)) as AudioSource;
 
         rand = new System.Random();
     }
@@ -83,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (walkDelay > SOUND_DELAY)
         {
-            int randomNum = rand.Next(1, 5);
+            int randomNum = rand.Next(1, 8);
 
             switch (randomNum)
             {
@@ -98,6 +104,15 @@ public class PlayerMovement : MonoBehaviour
                     break;
                 case 4:
                     walk4.Play();
+                    break;
+                case 5:
+                    walk5.Play();
+                    break;
+                case 6:
+                    walk6.Play();
+                    break;
+                case 7:
+                    walk7.Play();
                     break;
             }
             walkDelay = 0;

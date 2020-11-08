@@ -20,13 +20,13 @@ public class LevelManager : MonoBehaviour
         currentLevel = PlayerPrefs.GetInt("Level", 1);
 
         //Used to lock all levels except the first
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            if (i + 1 > currentLevel)
-            {
-                buttons[i].interactable = false;
-            }
-        }
+        //for (int i = 0; i < buttons.Length; i++)
+        //{
+        //    if (i + 1 > currentLevel)
+        //    {
+        //        buttons[i].interactable = false;
+        //    }
+        //}
     }
 
     /// <summary>

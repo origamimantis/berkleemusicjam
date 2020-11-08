@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.6351904, g: 0.6687433, b: 0.735849, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -7082,7 +7082,6 @@ GameObject:
   - component: {fileID: 279019124}
   - component: {fileID: 279019123}
   - component: {fileID: 279019122}
-  - component: {fileID: 279019121}
   m_Layer: 0
   m_Name: Ground 2 (1)
   m_TagString: Untagged
@@ -7090,22 +7089,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &279019121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 279019120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b550bfe38bdcb6c4ca1abfbe122a2beb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: {fileID: 0}
-  colorMappings: []
-  future: {fileID: 0}
-  player: {fileID: 0}
 --- !u!114 &279019122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49928,7 +49911,6 @@ GameObject:
   - component: {fileID: 2420879171186907803}
   - component: {fileID: 2420879171186907800}
   - component: {fileID: 2420879170655852780}
-  - component: {fileID: 2467027551711533482}
   m_Layer: 0
   m_Name: Ground 2
   m_TagString: Untagged
@@ -49997,38 +49979,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2467027551711533482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2420879171186907801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b550bfe38bdcb6c4ca1abfbe122a2beb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: {fileID: 0}
-  colorMappings: []
-  future: {fileID: 0}
-  player: {fileID: 0}
---- !u!114 &3789630637603877755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3977641952193687624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b550bfe38bdcb6c4ca1abfbe122a2beb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: {fileID: 0}
-  colorMappings: []
-  future: {fileID: 0}
-  player: {fileID: 0}
 --- !u!114 &3977641951680492093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50055,7 +50005,6 @@ GameObject:
   - component: {fileID: 3977641952193687626}
   - component: {fileID: 3977641952193687625}
   - component: {fileID: 3977641951680492093}
-  - component: {fileID: 3789630637603877755}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged

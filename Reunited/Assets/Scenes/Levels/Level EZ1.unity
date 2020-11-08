@@ -83687,7 +83687,7 @@ Transform:
   - {fileID: 572490757}
   - {fileID: 1950077374}
   m_Father: {fileID: 1458875906}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1303603080
 GameObject:
@@ -91494,27 +91494,27 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1544658042}
+  - {fileID: 1301586094}
   - {fileID: 1134082055}
   - {fileID: 233189725}
   - {fileID: 1954008458}
   - {fileID: 678519955}
-  - {fileID: 1301586094}
   - {fileID: 427083169}
   - {fileID: 1157739981}
   - {fileID: 726980331}
   - {fileID: 1752050511}
   - {fileID: 1294320601}
   - {fileID: 1110733220}
+  - {fileID: 1495776305}
   - {fileID: 606589256}
   - {fileID: 2011511765}
   - {fileID: 499166339}
   - {fileID: 1984903823}
   - {fileID: 915249762}
   - {fileID: 991587043}
-  - {fileID: 1495776305}
   - {fileID: 377547850}
-  - {fileID: 1750091757}
   - {fileID: 1648210099}
+  - {fileID: 1750091757}
   - {fileID: 1475191620}
   - {fileID: 39632312}
   m_Father: {fileID: 0}
@@ -93738,7 +93738,7 @@ Transform:
   - {fileID: 1763888176}
   - {fileID: 2030834487}
   m_Father: {fileID: 1458875906}
-  m_RootOrder: 18
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1497383469
 GameObject:
@@ -96305,7 +96305,7 @@ PrefabInstance:
     - target: {fileID: 5390792771763946341, guid: 568adc87ac00a434989c6106c09f1d20,
         type: 3}
       propertyPath: orthographic size
-      value: 6.53
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5390792771763946341, guid: 568adc87ac00a434989c6106c09f1d20,
         type: 3}
@@ -102706,7 +102706,7 @@ Transform:
   m_LocalScale: {x: 33, y: 34, z: 1}
   m_Children: []
   m_Father: {fileID: 1458875906}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1648769205
 GameObject:

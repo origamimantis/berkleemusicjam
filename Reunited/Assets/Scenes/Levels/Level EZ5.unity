@@ -10304,6 +10304,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pressure Plate Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9103786330465941326, guid: 7b40d470fe587684e83c12b4b010a772,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.00012564659
+      objectReference: {fileID: 0}
+    - target: {fileID: 9103786330465941326, guid: 7b40d470fe587684e83c12b4b010a772,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.88433313
+      objectReference: {fileID: 0}
+    - target: {fileID: 9103786330465941326, guid: 7b40d470fe587684e83c12b4b010a772,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.011591703
+      objectReference: {fileID: 0}
+    - target: {fileID: 9103786330465941326, guid: 7b40d470fe587684e83c12b4b010a772,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.8840819
+      objectReference: {fileID: 0}
     - target: {fileID: 9103786330465941327, guid: 7b40d470fe587684e83c12b4b010a772,
         type: 3}
       propertyPath: openDoors.Array.size

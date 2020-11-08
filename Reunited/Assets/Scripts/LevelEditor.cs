@@ -12,6 +12,9 @@ public class LevelEditor : MonoBehaviour
     public Texture2D level;
     public ColorToPrefab[] colorMappings;
 
+    public GameObject future;
+    public GameObject player;
+
     void Start()
     {
         GenerateLevel();
@@ -53,9 +56,10 @@ public class LevelEditor : MonoBehaviour
 
     void GenerateTiles(Dictionary<GameObject, List<Vector2>> positions)
     {
+        /*
         float lastX = -999;
         float lastY = -999;
-
+        */
         Vector2 objPos = new Vector2(-1, -1), scale = new Vector2(0, 0);
 
         foreach(GameObject fab in positions.Keys)
@@ -63,6 +67,14 @@ public class LevelEditor : MonoBehaviour
             for(int i = 0; i < positions[fab].Count; i++)
             {
                 Vector2 pos = positions[fab][i];
+
+                GameObject go = Instantiate(fab, new Vector3(pos.x, pos.y, 0), Quaternion.identity, transform);
+
+                HiddenRenderer renderer = go.GetComponent<HiddenRenderer>();
+                renderer.future = future;
+
+                // messes w/ texture scaling and I dont have enough time to make a fix for it
+                /*
                 print(pos);
 
                 if (objPos.x == -1)
@@ -88,13 +100,15 @@ public class LevelEditor : MonoBehaviour
                 }
 
                 lastY = pos.y;
-                lastX = pos.x;
+                lastX = pos.x;*/
             }
+
+            /*
             if (objPos.x != -1)
             {
                 GameObject current = Instantiate(fab, new Vector3(objPos.x, objPos.y, 0), Quaternion.identity, transform);
                 current.transform.localScale = new Vector3(scale.x, scale.y, 1);
-            }
+            }*/
         }
 
        

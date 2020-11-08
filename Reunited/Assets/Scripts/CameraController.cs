@@ -21,8 +21,6 @@ public class CameraController : MonoBehaviour
         Vector2 intermediate = new Vector2(future.transform.position.x + player.transform.position.x, future.transform.position.y + player.transform.position.y);
         intermediate /= 2;
 
-        // -8.095001 -> 3.978115
-
         // 12 = 5/12x
         float dx = future.transform.position.x - player.transform.position.x;
         float dy = future.transform.position.y - player.transform.position.y;
@@ -32,6 +30,6 @@ public class CameraController : MonoBehaviour
         Vector2 delta = intermediate - new Vector2(transform.position.x, transform.position.y);
 
         delta *= lerp;
-        transform.position = new Vector3(transform.position.x + delta.x, transform.position.y + delta.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x + delta.x, transform.position.y + delta.y, -20);
     }
 }

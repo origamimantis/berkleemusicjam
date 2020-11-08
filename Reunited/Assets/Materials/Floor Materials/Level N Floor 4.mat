@@ -13,7 +13,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 10
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -56,8 +56,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondaryTex:
-        m_Texture: {fileID: 2800000, guid: 07cb5696d32dfcd45802892e1d1b3edd, type: 3}
-        m_Scale: {x: 5, y: 36}
+        m_Texture: {fileID: 2800000, guid: c1c84d5a782340940b1f72bf510197d1, type: 3}
+        m_Scale: {x: 1.25, y: 9}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
@@ -79,4 +79,4 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _futureLocation: {r: 3.0285864, g: 37.72661, b: 0, a: 0}
+    - _futureLocation: {r: 27.004995, g: 33.99147, b: 0, a: 0}

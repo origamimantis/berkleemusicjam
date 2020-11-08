@@ -43,7 +43,9 @@ public class LevelEditor : MonoBehaviour
                             GameObject prefab = colorMappings[z].prefab;
                             Vector2 position = new Vector2(x, y);
                             if (!positions.ContainsKey(prefab))
+                            {
                                 positions[prefab] = new List<Vector2>();
+                            }
                             positions[prefab].Add(position);
                         }
                     }

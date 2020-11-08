@@ -10,7 +10,12 @@ public class LevelEditor : MonoBehaviour
 {
     // Start is called before the first frame update
     public Texture2D level;
+
+    /**
+     * wall: black
+     */
     public ColorToPrefab[] colorMappings;
+
     void Start()
     {
         GenerateLevel();

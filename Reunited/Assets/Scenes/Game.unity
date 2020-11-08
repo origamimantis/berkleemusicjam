@@ -2392,6 +2392,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6053473751883624328}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1223588633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223588626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5325e1d646bdb644998b517dc11f5631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelManager: {fileID: 0}
+  amtOfLevels: 0
 --- !u!1 &1372441395
 GameObject:
   m_ObjectHideFlags: 0
@@ -3361,6 +3375,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 5390792771763946342, guid: 568adc87ac00a434989c6106c09f1d20,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5390792771763946394, guid: 568adc87ac00a434989c6106c09f1d20,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3484,6 +3503,16 @@ PrefabInstance:
     - target: {fileID: 6053473749902350570, guid: 966d3bc5814731944a5d3691ec2ce612,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053473750685504668, guid: 966d3bc5814731944a5d3691ec2ce612,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053473751704139117, guid: 966d3bc5814731944a5d3691ec2ce612,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

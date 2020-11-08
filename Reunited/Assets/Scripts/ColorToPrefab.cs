@@ -8,6 +8,12 @@ using UnityEngine;
 [System.Serializable]
 public class ColorToPrefab
 {
+    public ColorToPrefab(Color c, GameObject prefab)
+    {
+        this.color = c;
+        this.prefab = prefab;
+    }
+
     public Color color;
     public GameObject prefab;
 }

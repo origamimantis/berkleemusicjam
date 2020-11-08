@@ -5,7 +5,7 @@ using UnityEngine;
 public class Lever : Usable
 {
     public bool state = false;
-    bool visible = false;
+    public bool visible = false;
 
     private new Renderer renderer;
 
@@ -14,14 +14,14 @@ public class Lever : Usable
     public Sprite off;
     public Sprite on;
 
-    public GameObject go;
+    public GameObject changeState;
 
     public void Start()
     {
         renderer = GetComponent<Renderer>();
         renderer.material.SetTexture("_SecondaryTex", state ? on.texture : off.texture);
 
-        go.SetActive(!state);
+        changeState.SetActive(!state);
     }
 
     public override void onUse()
@@ -31,7 +31,7 @@ public class Lever : Usable
             state = !state;
             renderer.material.SetTexture("_SecondaryTex", state ? on.texture : off.texture);
 
-            go.SetActive(!state);
+            changeState.SetActive(!state);
         }
     }
 

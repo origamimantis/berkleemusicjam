@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7951327426100530064}
   - component: {fileID: 7951327426100530065}
   - component: {fileID: 7951327426100530066}
-  - component: {fileID: 7951327426100530067}
+  - component: {fileID: 918935698}
   m_Layer: 0
   m_Name: Future
   m_TagString: Future
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7951327426100530068}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.76, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: efb97d175a675724db5d35e6c516555f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -117,8 +117,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &7951327426100530067
-BoxCollider2D:
+--- !u!58 &918935698
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -126,20 +126,10 @@ BoxCollider2D:
   m_GameObject: {fileID: 7951327426100530068}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: b1911ee36f1d4ac49885acbb2b0b621a, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.5

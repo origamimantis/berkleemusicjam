@@ -12,11 +12,16 @@ public abstract class Usable : MonoBehaviour
 
     protected bool canBeUsedBy(GameObject go)
     {
+        return canBeUsedBy(go, 1);
+    }
+
+    protected bool canBeUsedBy(GameObject go, float multiplier)
+    {
         float dx = go.transform.position.x - transform.position.x;
         float dy = go.transform.position.y - transform.position.y;
         double dist = dx * dx + dy * dy;
 
-        return dist <= interactionDistance * interactionDistance;
+        return dist <= interactionDistance * interactionDistance * multiplier * multiplier;
     }
 
     // Update is called once per frame

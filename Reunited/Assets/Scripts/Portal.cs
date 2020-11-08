@@ -32,7 +32,11 @@ public class Portal : MonoBehaviour
 		{
 			player.transform.position = (Vector2)ends[1-i].position + delta;
 			cantele[0] = false;
-		}
+
+			//Finds portal sound effect from audio sources and plays once.
+			AudioSource portal = GameObject.FindGameObjectWithTag("Portal").GetComponent(typeof(AudioSource)) as AudioSource;
+			portal.Play();
+			}
 
 		delta = future.transform.position - ends[i].position;
 		if (delta.magnitude < mins[1])
@@ -41,7 +45,11 @@ public class Portal : MonoBehaviour
 		{
 			future.transform.position = (Vector2)ends[1-i].position + delta;
 			cantele[1] = false;
-		}
+
+			//Finds portal sound effect from audio sources and plays once.
+			AudioSource portal = GameObject.FindGameObjectWithTag("Portal").GetComponent(typeof(AudioSource)) as AudioSource;
+			portal.Play();
+			}
 	    }
 		if (cantele[0] == false && mins[0] > 1)
 			cantele[0] = true;

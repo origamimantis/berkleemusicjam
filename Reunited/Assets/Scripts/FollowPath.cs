@@ -17,7 +17,6 @@ public class FollowPath : FollowBase
     float pause = 0;
     bool initial = true;
 
-    int pathIdx = 0;
     private Vector2 lastPoint;
     private Vector2 facing;
 

@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class CollidingWithFuture : MonoBehaviour
 {
-    public LevelManager levelManager;
+    private LevelManager levelManager;
     public int amtOfLevels;
 
     private void Start()

@@ -663,7 +663,7 @@ GameObject:
   - component: {fileID: 82108912}
   m_Layer: 0
   m_Name: Walk 7
-  m_TagString: Walk4
+  m_TagString: Walk7
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2770,7 +2770,7 @@ GameObject:
   - component: {fileID: 230154405}
   m_Layer: 0
   m_Name: Walk 5
-  m_TagString: Walk4
+  m_TagString: Walk5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7264,7 +7264,7 @@ GameObject:
   - component: {fileID: 728840556}
   m_Layer: 0
   m_Name: Walk 6
-  m_TagString: Walk4
+  m_TagString: Walk6
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

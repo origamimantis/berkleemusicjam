@@ -98791,7 +98791,7 @@ GameObject:
   - component: {fileID: 1598720195}
   m_Layer: 0
   m_Name: Die
-  m_TagString: Untagged
+  m_TagString: Loss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129175,7 +129175,7 @@ GameObject:
   - component: {fileID: 2039263837}
   m_Layer: 5
   m_Name: Loss Menu
-  m_TagString: Loss
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

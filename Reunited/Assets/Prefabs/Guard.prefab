@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moving: 1
   PathObject: {fileID: 0}
+  initialNode: 0
   accelSpeed: 1
   maxSpeed: 1
   PauseDuration: 2
@@ -182,7 +183,7 @@ GameObject:
   - component: {fileID: 1720649161681733221}
   - component: {fileID: 1720649161681733220}
   - component: {fileID: 8434395934759759960}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

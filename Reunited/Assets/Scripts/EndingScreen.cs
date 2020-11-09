@@ -6,17 +6,12 @@ public class EndingScreen : MonoBehaviour
 {
     public GameObject future;
     public GameObject player;
+    public Canvas canvas;
 
     public Camera cam;
     public new Light light;
 
     float rampup = 0;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -48,6 +43,7 @@ public class EndingScreen : MonoBehaviour
         if(light.intensity <= 0)
         {
             // display text "fin"
+            //canvas.enabled = true;
         }
     }
 }

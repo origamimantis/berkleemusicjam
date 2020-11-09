@@ -188,8 +188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc90015c8b65d154b83b564a6f358545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelSpeed: 1.5
-  maxSpeed: 0.1
 --- !u!50 &617073957441808147
 Rigidbody2D:
   serializedVersion: 4
@@ -240,4 +238,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 0}
-  amtOfLevels: 20
+  amtOfLevels: 13

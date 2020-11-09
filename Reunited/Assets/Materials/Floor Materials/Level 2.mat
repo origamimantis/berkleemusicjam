@@ -79,4 +79,4 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _futureLocation: {r: 6.0223618, g: 9.415816, b: 0, a: 0}
+    - _futureLocation: {r: 6.8892136, g: 14.014356, b: 0, a: 0}

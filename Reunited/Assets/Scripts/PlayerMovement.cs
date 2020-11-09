@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 velocity;
     private Vector2 inputVelocity;
 
-    public float accelSpeed = 6;
-    public float maxSpeed = 10;
+    private float accelSpeed = 1.5f;
+    private float maxSpeed = 0.1f;
 
     private AudioSource walk1;
     private AudioSource walk2;
@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private System.Random rand;
 
     Rigidbody2D body;
+
+    private float oldRot = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +50,42 @@ public class PlayerMovement : MonoBehaviour
             velocity.x *= 0.1f;
         if (inputVelocity.y == 0)
             velocity.y *= 0.1f;
-        
+
+        float rotation = -1000;
+
+        if (inputVelocity.x > 0)
+        {
+            rotation = 90;
+
+            if (inputVelocity.y > 0)
+                rotation += 45;
+            else if (inputVelocity.y < 0)
+                rotation -= 45;
+        }
+        else if (inputVelocity.x < 0)
+        {
+            rotation = -90;
+
+            if (inputVelocity.y > 0)
+                rotation -= 45;
+            else if (inputVelocity.y < 0)
+                rotation += 45;
+        }
+        else
+        {
+            if (inputVelocity.y > 0)
+                rotation = 180;
+            else if (inputVelocity.y < 0)
+                rotation = 0;
+        }
+
+        if (rotation == -1000)
+            rotation = oldRot;
+
+        rotation = 0.9f * (rotation - oldRot) + oldRot;
+
+        oldRot = rotation;
+
         inputVelocity *= Time.deltaTime * accelSpeed;
 
         velocity += inputVelocity;
@@ -59,10 +96,11 @@ public class PlayerMovement : MonoBehaviour
             velocity *= maxSpeed;
         }
 
+        transform.rotation = Quaternion.Euler(0, 0, rotation);
         body.MovePosition(new Vector2(transform.position.x + velocity.x, transform.position.y + velocity.y));
 
         //Checks if player is moving, if so, plays sound, else sets it so that the next sound is instant.
-        if (Math.Abs(velocity.x) > .1f || Math.Abs(velocity.y) > .1f)
+        if (Math.Abs(velocity.x) > .05f || Math.Abs(velocity.y) > .05f)
             GenerateFootsteps();
         else
             walkDelay = 100;
@@ -73,12 +111,6 @@ public class PlayerMovement : MonoBehaviour
     {
         inputVelocity.y = (Input.GetKey(KeyCode.W) ? 1 : 0) - (Input.GetKey(KeyCode.S) ? 1 : 0);
         inputVelocity.x = (Input.GetKey(KeyCode.D) ? 1 : 0) - (Input.GetKey(KeyCode.A) ? 1 : 0);
-
-        if(tag.Equals("Finish"))
-        {
-            Shader.SetGlobalVector("_futureLocation", 
-                new Vector4(transform.position.x, transform.position.y, transform.position.z, 0));
-        }
     }
 
     /// <summary>

@@ -18,6 +18,7 @@ TagManager:
   - Walk5
   - Walk6
   - Walk7
+  - Portal
   layers:
   - Default
   - TransparentFX

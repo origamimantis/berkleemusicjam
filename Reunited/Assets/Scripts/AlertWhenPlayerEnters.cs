@@ -35,7 +35,7 @@ public class AlertWhenPlayerEnters : MonoBehaviour
 		if (lose == false)
 	        {
 		    lose = true;
-		    Invoke("OnLose", 0f);
+		    OnLose();
 	        }
 	    }
     }

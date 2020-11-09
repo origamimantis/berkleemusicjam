@@ -14196,7 +14196,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1441181592}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1152233645013124651, guid: adabb245014b0254c8b03daec47d868b,
         type: 3}
@@ -14241,7 +14241,7 @@ PrefabInstance:
     - target: {fileID: 2188090733930549263, guid: adabb245014b0254c8b03daec47d868b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 39
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2188090733930549263, guid: adabb245014b0254c8b03daec47d868b,
         type: 3}

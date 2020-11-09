@@ -31,7 +31,7 @@ public class CollidingWithFuture : MonoBehaviour
             else
             {
                 //Completed all levels.
-                SceneManager.LoadSceneAsync("End");
+                SceneManager.LoadSceneAsync("TheEnd");
             }
 
             //Finds victory sound effect from audio sources and plays once.

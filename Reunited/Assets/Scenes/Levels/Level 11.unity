@@ -9580,6 +9580,7 @@ MonoBehaviour:
   future: {fileID: 884085047}
   player: {fileID: 934637684}
   lerp: 0.01
+  ratio: 1
 --- !u!81 &834893857
 AudioListener:
   m_ObjectHideFlags: 0
@@ -11003,6 +11004,7 @@ GameObject:
   - component: {fileID: 934637687}
   - component: {fileID: 934637686}
   - component: {fileID: 934637685}
+  - component: {fileID: 934637691}
   m_Layer: 0
   m_Name: Player11
   m_TagString: Player
@@ -11121,6 +11123,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &934637691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934637684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5325e1d646bdb644998b517dc11f5631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelManager: {fileID: 0}
+  amtOfLevels: 13
 --- !u!1 &951692927
 GameObject:
   m_ObjectHideFlags: 0

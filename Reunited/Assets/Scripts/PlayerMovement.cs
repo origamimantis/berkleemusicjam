@@ -100,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
         body.MovePosition(new Vector2(transform.position.x + velocity.x, transform.position.y + velocity.y));
 
         //Checks if player is moving, if so, plays sound, else sets it so that the next sound is instant.
-        if (Math.Abs(velocity.x) > .1f || Math.Abs(velocity.y) > .1f)
+        if (Math.Abs(velocity.x) > .05f || Math.Abs(velocity.y) > .05f)
             GenerateFootsteps();
         else
             walkDelay = 100;

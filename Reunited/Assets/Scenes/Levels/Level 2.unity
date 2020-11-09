@@ -545,6 +545,7 @@ GameObject:
   - component: {fileID: 89814123}
   - component: {fileID: 89814122}
   - component: {fileID: 89814121}
+  - component: {fileID: 89814127}
   m_Layer: 0
   m_Name: Player12
   m_TagString: Player
@@ -663,6 +664,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &89814127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89814120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5325e1d646bdb644998b517dc11f5631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelManager: {fileID: 0}
+  amtOfLevels: 13
 --- !u!1 &93319885
 GameObject:
   m_ObjectHideFlags: 0
@@ -16726,6 +16741,7 @@ MonoBehaviour:
   future: {fileID: 1615607006}
   player: {fileID: 89814120}
   lerp: 0.01
+  ratio: 1
 --- !u!81 &2105566240
 AudioListener:
   m_ObjectHideFlags: 0

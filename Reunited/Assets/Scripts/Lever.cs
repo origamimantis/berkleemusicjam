@@ -47,6 +47,10 @@ public class Lever : Usable
         {
             renderer.sharedMaterial.SetVector("_futureLocation", new Vector4(future.transform.position.x, future.transform.position.y, future.transform.position.z, 0));
         }
+        else
+        {
+            renderer.sharedMaterial.SetVector("_futureLocation", new Vector4(transform.position.x, transform.position.y, transform.position.z, 0));
+        }
 
         if (canBeUsedBy(future, 2.5f))
         {

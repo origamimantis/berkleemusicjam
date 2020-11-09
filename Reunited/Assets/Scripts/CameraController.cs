@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour
     public GameObject future;
     public GameObject player;
     public float lerp = 0.1f;
+    public float ratio = 1;
     private Camera cam;
 
     private void Start()
@@ -25,7 +26,7 @@ public class CameraController : MonoBehaviour
         float dx = future.transform.position.x - player.transform.position.x;
         float dy = future.transform.position.y - player.transform.position.y;
 
-        cam.orthographicSize += lerp * (Mathf.Max(5, 5 / 6.0f * Mathf.Sqrt(dx * dx + dy * dy)) - cam.orthographicSize);
+        cam.orthographicSize += lerp * (Mathf.Max(5, ratio * 5 / 6.0f * Mathf.Sqrt(dx * dx + dy * dy)) - cam.orthographicSize);
 
         Vector2 delta = intermediate - new Vector2(transform.position.x, transform.position.y);
 

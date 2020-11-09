@@ -7,8 +7,9 @@ using UnityEngine;
 
 public class FollowBase : MonoBehaviour
 {
-	[HideInInspector]
-	public bool moving = true;
+    public bool moving = true;
+
+    [HideInInspector]
 	public GameObject PathObject;
 	public int initialNode = 0;
 	protected Transform[] Path;
@@ -16,6 +17,8 @@ public class FollowBase : MonoBehaviour
 
 	protected void Start()
 	{
+        if (!moving)
+            return;
 
 		Path = new Transform[PathObject.transform.childCount];
 		for (int i = 0; i < PathObject.transform.childCount; ++i)

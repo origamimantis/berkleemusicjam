@@ -35,8 +35,8 @@ public class CollidingWithFuture : MonoBehaviour
             }
 
             //Finds victory sound effect from audio sources and plays once.
-            AudioSource win = GameObject.FindGameObjectWithTag("Win").GetComponent(typeof(AudioSource)) as AudioSource;
-            win.Play();
+            //AudioSource win = GameObject.FindGameObjectWithTag("Win").GetComponent(typeof(AudioSource)) as AudioSource;
+            //win.Play();
         }
     }
 }
